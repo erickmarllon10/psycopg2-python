@@ -32,7 +32,7 @@ def accessUser():
     login = raw_input("Digite o seu login: ")
     passw = raw_input("Digite a sua senha: ")
     try:
-        con = psycopg2.connect("host=127.0.0.1 dbname=onxenti user=onxentiadmin password=7487105")
+        con = psycopg2.connect("host=127.0.0.1 dbname=onxenti user=onxentiadmin password=123456")
         cur = con.cursor()
         sql = "select * from users where login_access = (%s) and passwd = (%s)"
         sql_data = (login, passw)
@@ -52,7 +52,7 @@ def chPasswd():
     print "------ Alteracao de senha ------"
     print "--------------------------------"
     try:
-        con = psycopg2.connect("host=127.0.0.1 dbname=onxenti user=onxentiadmin password=7487105")
+        con = psycopg2.connect("host=127.0.0.1 dbname=onxenti user=onxentiadmin password=123456")
         cur = con.cursor()
         cur.execute ("select * from users")
         for u in (cur.fetchall()):
